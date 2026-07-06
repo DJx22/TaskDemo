@@ -25,6 +25,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IDataRepository, DapperDataRepository>();
         services.AddScoped<IExcelService, ExcelService>();
         services.AddScoped<IBlobStorageService, BlobStorageService>();
+        services.AddScoped<IFileProcessorService, FileProcessorService>();
         services.AddScoped<IExportHistoryService, ExportHistoryService>();
 
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(AzureExcelExporter.Application.Features.ExportData.Commands.ExportDataCommand).Assembly));
