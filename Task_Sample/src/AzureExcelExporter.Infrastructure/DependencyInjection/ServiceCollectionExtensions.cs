@@ -1,6 +1,5 @@
 using AzureExcelExporter.Application.Behaviors;
 using AzureExcelExporter.Application.Interfaces;
-using AzureExcelExporter.Infrastructure.Options;
 using AzureExcelExporter.Infrastructure.Persistence;
 using AzureExcelExporter.Infrastructure.Repositories;
 using AzureExcelExporter.Infrastructure.Services;
@@ -16,8 +15,6 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
-        services.Configure<DatabaseOptions>(configuration.GetSection(DatabaseOptions.SectionName));
-        services.Configure<AzureStorageOptions>(configuration.GetSection(AzureStorageOptions.SectionName));
 
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString("SqlConnection")));

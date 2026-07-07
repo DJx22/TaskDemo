@@ -9,7 +9,7 @@ public class AppDbContext : DbContext
     {
     }
 
-    public DbSet<ExportHistory> ExportHistories => Set<ExportHistory>();
+    public DbSet<ExportHistory> ExportHistories { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

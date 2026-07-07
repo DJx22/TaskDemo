@@ -52,7 +52,6 @@ public class ExportDataCommandHandler : IRequestHandler<ExportDataCommand, ApiRe
             var exportHistory = new ExportHistory
             {
                 FileName = fileName,
-                BlobUrl = blobUrl,
                 RecordCount = customers.Count,
                 ExportedAt = DateTimeOffset.UtcNow,
                 Status = ExportStatus.Completed.ToString(),
@@ -67,7 +66,6 @@ public class ExportDataCommandHandler : IRequestHandler<ExportDataCommand, ApiRe
                 Success = true,
                 Message = "Export completed successfully.",
                 FileName = fileName,
-                BlobUrl = blobUrl,
                 Timestamp = DateTimeOffset.UtcNow
             };
         }

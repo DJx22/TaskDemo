@@ -2,17 +2,19 @@
   "IsEncrypted": false,
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "AzureWebJobsSecretStorageType": "Files",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-    "AzureWebJobsFeatureFlags": "EnableWorkerIndexing"
+    "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
+    "AzureStorage__ConnectionString": "UseDevelopmentStorage=true",
+    "AzureStorage__ContainerName": "exports",
+    "BlobTrigger__SourceContainer": "exports",
+    "BlobTrigger__DestinationContainer": "processed",
+    "BlobTrigger__ArchiveContainer": "archive"
   },
   "ConnectionStrings": {
     "SqlConnection": "Server=localhost;Database=TaskDemo;Trusted_Connection=True;TrustServerCertificate=True;"
   },
   "Database": {
     "ConnectionString": "Server=localhost;Database=TaskDemo;Trusted_Connection=True;TrustServerCertificate=True;"
-  },
-  "AzureStorage": {
-    "ConnectionString": "UseDevelopmentStorage=true",
-    "ContainerName": "exports"
   }
 }

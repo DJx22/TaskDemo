@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureExcelExporter.Domain",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureExcelExporter.Infrastructure", "src\AzureExcelExporter.Infrastructure\AzureExcelExporter.Infrastructure.csproj", "{83AC1192-1976-43CD-98A4-8717847DCD96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureExcelExporter.Tests", "AzureExcelExporter.Tests\AzureExcelExporter.Tests.csproj", "{E43193B4-1D3B-4B38-8E24-13B317976316}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{83AC1192-1976-43CD-98A4-8717847DCD96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83AC1192-1976-43CD-98A4-8717847DCD96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83AC1192-1976-43CD-98A4-8717847DCD96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E43193B4-1D3B-4B38-8E24-13B317976316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E43193B4-1D3B-4B38-8E24-13B317976316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E43193B4-1D3B-4B38-8E24-13B317976316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E43193B4-1D3B-4B38-8E24-13B317976316}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{76603240-87EB-4FCC-8E78-083D99D1D0AB} = {206B7434-5AF1-4D20-8E82-14A8F7625DC1}

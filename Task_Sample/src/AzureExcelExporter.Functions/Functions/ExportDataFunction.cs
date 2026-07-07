@@ -19,26 +19,28 @@ public class ExportDataFunction
         _logger = logger;
     }
 
+
     [Function("ExportData")]
-    public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req)
+    public async Task<HttpResponseData> Run(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req)
     {
         _logger.LogInformation("Received export request");
 
         try
         {
-            var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            var command = string.IsNullOrWhiteSpace(requestBody)
-                ? new ExportDataCommand(null)
-                : new ExportDataCommand(requestBody);
+            var command = new ExportDataCommand(null);
 
             var response = await _mediator.Send(command);
+
             var httpResponse = req.CreateResponse(HttpStatusCode.OK);
             await httpResponse.WriteAsJsonAsync(response);
+
             return httpResponse;
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Export request failed");
+
             var response = req.CreateResponse(HttpStatusCode.BadRequest);
             await response.WriteAsJsonAsync(new ApiResponse
             {
@@ -46,7 +48,9 @@ public class ExportDataFunction
                 Message = ex.Message,
                 Timestamp = DateTimeOffset.UtcNow
             });
+
             return response;
         }
     }
+
 }
